@@ -1,5 +1,9 @@
 #!/bin/bash
 
+SCRIPT=`realpath $0`
+SCRIPTPATH=`dirname $SCRIPT`
+cd $SCRIPTPATH
+
 # Check if docker can access the external mount
 output=$(docker run -v /mnt/media:/media ubuntu ls -R /media/Documentaries 2>/dev/null)
 
@@ -14,7 +18,7 @@ if [ $RESULT -eq 0 ]; then
     echo "Plex is already running"
   fi
 else
-  #sudo bash ./mount.sh
+  sudo bash ./mount.sh
   echo "Restart docker deamon before running plex"
 fi
 
