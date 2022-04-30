@@ -1,6 +1,6 @@
 # Plex server in WSL
 
-Plex Server on WSL with external drive mount
+Plex Server on WSL with Windows drive mount using Docker
 
 ## Commands
 
